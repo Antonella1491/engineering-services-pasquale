@@ -14,10 +14,20 @@ h4 {
 
 .navbar {
     padding: 1rem 0;
+    background-color: #012B43 !important;
+    .labelLogo {
+        color: #BE9C77;
+    }
+}
+.navbar-toggler {
+    border: 1px solid #BE9C77;
+    .icoMenu {
+    height: 35px;
+}
 }
 
 .logo {
-    height: 45px;
+    height: 70px;
     width: auto;
 }
 
@@ -140,14 +150,14 @@ footer {
 
 /* Navbar link styles */
 .navbar-nav .nav-link {
-    color: #fff;
+    color: #BE9C77;
     margin-left: 1rem;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #007bff;
+    color: #fff;
 }
 
 .mobile-br {
