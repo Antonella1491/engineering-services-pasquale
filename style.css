@@ -17,18 +17,20 @@ h4 {
     background-color: #012B43 !important;
     .labelLogo {
         color: #BE9C77;
+        font-size: 16px;
     }
 }
 .navbar-toggler {
     border: 1px solid #BE9C77;
     .icoMenu {
-    height: 35px;
+    height: 24px;
 }
 }
 
 .logo {
     height: 70px;
     width: auto;
+    padding-right: 15px;
 }
 
 .hero {
@@ -142,7 +144,7 @@ section#chi img {
 
 /* Footer */
 footer {
-    background-color: #212529;
+    background-color: #012B43 !important;
     color: #fff;
     padding: 2rem 0;
     text-align: center;
@@ -165,7 +167,7 @@ footer {
 }
 
 .contactsLabel {
-    color: #444;
+    color: #BE9C77;
     font-weight: bold;
     font-style: italic;
 }
