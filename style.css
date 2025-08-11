@@ -23,7 +23,8 @@ h4 {
 
 .hero {
     min-height: 150vh;
-    background-image: url('Assets/my\ Photo.jpg'); /* metti il path corretto alla tua immagine */
+    background-image: url('Assets/my\ Photo.jpg');
+    /* metti il path corretto alla tua immagine */
     background-size: cover;
     background-position: 50% 20%;
     background-repeat: no-repeat;
@@ -49,7 +50,8 @@ h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* sfumatura scura per contrasto col testo */
+    background: rgba(0, 0, 0, 0.4);
+    /* sfumatura scura per contrasto col testo */
     z-index: 1;
 }
 
@@ -77,46 +79,43 @@ h4 {
 
 /*Sezione card*/
 
-  .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      position: relative;
-      bottom:100px;
-    }
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    bottom: 122px;
+}
 
-    .card {
-      background-color: #fff;
-      color: #444;
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
-      flex: 1 1 300px;
-      max-width: 350px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
+.card {
+    background-color: #fff;
+    color: #444;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 350px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-    .card i {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
+.card i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
 
-    .card p {
-      font-size: 1.1rem;
-      font-weight: 500;
-      line-height: 1.6;
-    }
+.card p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
 
 /* Sezione Chi sono */
-section#chi {
-    padding: 4rem 0;
-}
 
 section#chi p {
     font-size: 1.15rem;
@@ -151,6 +150,10 @@ footer {
     color: #007bff;
 }
 
+.mobile-br {
+    display: none;
+}
+
 .contactsLabel {
     color: #444;
     font-weight: bold;
@@ -164,13 +167,27 @@ footer {
 }
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+
+    .mobile-br {
+        display: inline;
+    }
+
+    .hero {
+        min-height: 100vh;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .hero p.lead {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 0 1rem;
+    }
+
+    .card-container {
+        top: 50px;
+        margin-bottom: 50px;
     }
 }
