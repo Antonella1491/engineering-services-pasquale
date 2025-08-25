@@ -15,16 +15,19 @@ h4 {
 .navbar {
     padding: 1rem 0;
     background-color: #012B43 !important;
+
     .labelLogo {
         color: #BE9C77;
         font-size: 16px;
     }
 }
+
 .navbar-toggler {
     border: 1px solid #BE9C77;
+
     .icoMenu {
-    height: 24px;
-}
+        height: 24px;
+    }
 }
 
 .logo {
@@ -78,7 +81,7 @@ h4 {
 
 .contactsBtn {
     background-color: #012B43;
-    border: none;
+    border: 1px solid #BE9C77;
     padding: 0.75rem 2rem;
     font-size: 1.25rem;
     border-radius: 10px;
@@ -92,6 +95,7 @@ h4 {
     background-color: #BE9C77;
     color: #012B43;
     font-weight: bold;
+    border: 1px solid #012B43;
 }
 
 /*Sezione card*/
@@ -195,6 +199,7 @@ footer {
 .carousel-caption {
     background-color: rgba(1, 43, 67, 0.5);
     color: #BE9C77;
+
     h5 {
         font-weight: bold;
     }
