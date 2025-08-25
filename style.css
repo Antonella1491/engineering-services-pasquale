@@ -208,6 +208,10 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 1000px) {
 
+    .navbar-toggler {
+        margin-right: 5px;
+    }
+
     .mobile-br {
         display: inline;
     }
