@@ -205,6 +205,26 @@ footer {
     }
 }
 
+.scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;          
+    justify-content: center; 
+    align-items: center;     
+    z-index: 999;
+    background-color: #012B43;
+    width: 50px;       
+    height: 50px;       
+    border-radius: 50%;
+    padding: 0;   
+    &:hover {
+        border: 1px solid #012B43;
+        transform: scale(1.1);
+    }        
+}
+
+
 /* Responsive tweaks */
 @media (max-width: 1000px) {
 
@@ -232,5 +252,17 @@ footer {
     .card-container {
         top: 50px;
         margin-bottom: 50px;
+    }
+
+    .carousel-caption {
+        height: 100px;
+
+        h5 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 12px;
+        }
     }
 }
