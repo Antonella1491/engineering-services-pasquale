@@ -12,22 +12,23 @@ h4 {
     font-family: 'Merriweather', serif;
 }
 
+/* Navbar */
 .navbar {
     padding: 1rem 0;
     background-color: #012B43 !important;
+}
 
-    .labelLogo {
-        color: #BE9C77;
-        font-size: 16px;
-    }
+.navbar .labelLogo {
+    color: #BE9C77;
+    font-size: 16px;
 }
 
 .navbar-toggler {
     border: 1px solid #BE9C77;
+}
 
-    .icoMenu {
-        height: 24px;
-    }
+.navbar-toggler .icoMenu {
+    height: 24px;
 }
 
 .logo {
@@ -36,10 +37,10 @@ h4 {
     padding-right: 15px;
 }
 
+/* Hero */
 .hero {
     min-height: 150vh;
-    background-image: url('Assets/my\ Photo.jpg');
-    /* metti il path corretto alla tua immagine */
+    background-image: url('Assets/my Photo.jpg');
     background-size: cover;
     background-position: 50% 20%;
     background-repeat: no-repeat;
@@ -57,7 +58,6 @@ h4 {
     font-size: 1.4rem;
     margin-bottom: 2rem;
     max-width: 600px;
-    text-align: center;
     text-align: start;
 }
 
@@ -66,7 +66,6 @@ h4 {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
-    /* sfumatura scura per contrasto col testo */
     z-index: 1;
 }
 
@@ -75,10 +74,12 @@ h4 {
     z-index: 2;
 }
 
+/* Emphasis */
 .emphasis {
     color: #BE9C77;
 }
 
+/* Buttons */
 .contactsBtn {
     background-color: #012B43;
     border: 1px solid #BE9C77;
@@ -98,8 +99,7 @@ h4 {
     border: 1px solid #012B43;
 }
 
-/*Sezione card*/
-
+/* Card section */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -136,8 +136,7 @@ h4 {
     line-height: 1.6;
 }
 
-/* Sezione Chi sono */
-
+/* Section Chi sono */
 section#chi h2 {
     text-align: center;
     color: #012B43;
@@ -164,7 +163,7 @@ footer {
     text-align: center;
 }
 
-/* Navbar link styles */
+/* Navbar link */
 .navbar-nav .nav-link {
     color: #BE9C77;
     margin-left: 1rem;
@@ -180,18 +179,42 @@ footer {
     display: none;
 }
 
+/* Contacts section */
 .contactsLabel {
     color: #BE9C77;
     font-weight: bold;
     font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
-.contactsLink {
-    img {
-        width: 30px;
-    }
+.contactsLabel::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #BE9C77;
+    margin: 0.5rem auto 0 auto;
+    border-radius: 2px;
 }
 
+.contactsLink img {
+    width: 32px;
+    transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.contactsLink img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+/* Carousel */
 .work-carousel {
     color: #012B43;
 }
@@ -199,10 +222,10 @@ footer {
 .carousel-caption {
     background-color: rgba(1, 43, 67, 0.5);
     color: #BE9C77;
+}
 
-    h5 {
-        font-weight: bold;
-    }
+.carousel-caption h5 {
+    font-weight: bold;
 }
 
 .carousel-inner {
@@ -212,37 +235,33 @@ footer {
 #carouselLavori {
     display: flex;
     justify-content: center;
-    /* centra orizzontalmente */
     align-items: center;
-    /* centra verticalmente */
     min-height: 70vh;
+}
 
-    /* altezza minima pari a tutta la finestra */
-    .carousel-control-prev,
-    .carousel-control-next {
-        height: 50px;
-        background-color: #012B43;
-        width: 50px;
-        border-radius: 50%;
-        margin-top: 280px;
+#carouselLavori .carousel-control-prev,
+#carouselLavori .carousel-control-next {
+    height: 50px;
+    background-color: #012B43;
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 280px;
+}
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 20px;
-        }
-    }
+#carouselLavori .carousel-control-prev-icon,
+#carouselLavori .carousel-control-next-icon {
+    width: 20px;
 }
 
 .carousel-indicators [data-bs-target] {
     background-color: #BE9C77;
 }
 
-.carousel-item {
-    button {
-        color: #BE9C77;
-    }
+.carousel-item button {
+    color: #BE9C77;
 }
 
+/* Scroll to top */
 .scrollTop {
     position: fixed;
     bottom: 20px;
@@ -256,17 +275,23 @@ footer {
     height: 50px;
     border-radius: 50%;
     padding: 0;
-
-    &:hover {
-        border: 1px solid #012B43;
-        transform: scale(1.1);
-    }
+    border: 1px solid #BE9C77;
+    cursor: pointer;
 }
 
+.scrollTop:hover {
+    border: 1px solid #012B43;
+    transform: scale(1.1);
+}
+
+/* Contatti section */
+#contatti {
+    background-color: #012B43;
+    color: #BE9C77;
+}
 
 /* Responsive tweaks */
 @media (max-width: 1000px) {
-
     .navbar-toggler {
         margin-right: 5px;
     }
@@ -295,14 +320,14 @@ footer {
 
     .carousel-caption {
         height: 100px;
+    }
 
-        h5 {
-            font-size: 14px;
-        }
+    .carousel-caption h5 {
+        font-size: 14px;
+    }
 
-        p {
-            font-size: 12px;
-        }
+    .carousel-caption p {
+        font-size: 12px;
     }
 
     .carousel-inner {
@@ -313,20 +338,16 @@ footer {
         min-height: 40vh;
     }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-        margin-top: 140px !important;
-        background-color: #BE9C77 !important;
-        border: 2px solid #012B43;
-        width: 30px !important;
-        height: 30px !important;
+    .work-carousel {
+        margin-bottom: 0 !important;
     }
 
-    section#chi h2 {
-        margin-top: 0 !important;
-    }
-
-    section#lavori {
-        padding-top: 0 !important;
+    #carouselLavori .carousel-control-prev,
+    #carouselLavori .carousel-control-next {
+        height: 30px;
+        width: 30px;
+        margin-top: 150px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
