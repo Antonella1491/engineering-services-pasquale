@@ -1144,6 +1144,15 @@ footer {
         text-align: left;
     }
 
+    .footer-contacts {
+        align-items: flex-start;
+    }
+
+    .footer-contacts a {
+        width: 150px;
+        justify-content: space-between;
+    }
+
     .btn-top {
         right: 16px;
         bottom: 16px;
