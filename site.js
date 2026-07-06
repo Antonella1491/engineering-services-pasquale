@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btnTop");
     const navToggle = document.querySelector(".nav-toggle");
     const mainNav = document.getElementById("mainNav");
+    const whatsappLinks = document.querySelectorAll(".whatsapp-link");
 
     if (btn) {
         btn.style.display = "none";
@@ -44,4 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    whatsappLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const appUrl = link.dataset.appUrl;
+            const webUrl = link.dataset.webUrl || link.href;
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+            if (isMobile && appUrl) {
+                window.location.href = appUrl;
+
+                window.setTimeout(() => {
+                    window.location.href = webUrl;
+                }, 900);
+
+                return;
+            }
+
+            window.open(webUrl, "_blank", "noopener");
+        });
+    });
 });
