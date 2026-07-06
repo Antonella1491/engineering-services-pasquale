@@ -878,13 +878,52 @@ nav a:hover {
 footer {
     padding: 48px 0 34px;
     border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.025));
 }
 
 .footer-grid {
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     gap: 24px;
     align-items: flex-start;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255, 179, 71, 0.12), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(125, 211, 252, 0.1), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025));
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(16px);
+}
+
+.footer-grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28px;
+    right: 28px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+    opacity: 0.82;
+}
+
+.footer-grid h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-grid h3::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 18px rgba(255, 179, 71, 0.55);
 }
 
 .footer-grid p {
@@ -892,16 +931,47 @@ footer {
 }
 
 .footer-contacts {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     text-align: right;
 }
 
+.footer-contacts p {
+    margin: 0;
+}
+
 .footer-contacts a {
-    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.045);
+    color: var(--text);
     text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-contacts a::after {
+    content: "↗";
+    color: var(--accent);
+    font-size: 0.82rem;
+    transition: transform 0.25s ease;
 }
 
 .footer-contacts a:hover {
     color: var(--accent-hover);
+    border-color: rgba(255, 179, 71, 0.38);
+    background: rgba(255, 179, 71, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-contacts a:hover::after {
+    transform: translate(2px, -2px);
 }
 
 .btn-top {
