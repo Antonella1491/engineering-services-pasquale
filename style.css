@@ -565,16 +565,51 @@ nav a:hover {
 }
 
 .card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 14px;
+    position: relative;
+    overflow: hidden;
     padding: 26px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), transparent);
+    opacity: 0.8;
+}
+
 .card > span {
     display: inline-flex;
-    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 179, 71, 0.32);
+    border-radius: 14px;
+    background: rgba(255, 179, 71, 0.1);
     color: var(--accent);
     font-weight: 800;
     font-size: 0.85rem;
+    box-shadow: 0 10px 24px rgba(255, 179, 71, 0.08);
+}
+
+.card h3 {
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.card p {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    margin-bottom: 0;
 }
 
 .card:hover {
