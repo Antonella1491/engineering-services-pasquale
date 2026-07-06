@@ -733,10 +733,16 @@ footer {
 }
 
 @media (max-width: 760px) {
+    html {
+        background: var(--bg);
+    }
+
     body {
+        background: var(--bg);
         background-attachment: scroll;
-        background-size: 180% 120%, 160% 120%, cover;
-        background-position: left top, right top, center top;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center top;
     }
 
     .splash {
@@ -808,6 +814,10 @@ footer {
     .hero {
         padding-top: 104px;
         padding-bottom: 38px;
+    }
+
+    .hero-image {
+        order: -1;
     }
 
     .stats {
