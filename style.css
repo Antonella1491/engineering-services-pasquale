@@ -30,6 +30,9 @@ body {
         radial-gradient(circle at 8% 5%, rgba(125, 211, 252, 0.18), transparent 32%),
         radial-gradient(circle at 88% 14%, rgba(255, 179, 71, 0.2), transparent 28%),
         linear-gradient(135deg, var(--bg), var(--bg-alt) 48%, #16253c);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
@@ -126,10 +129,15 @@ a {
     z-index: -1;
     background-image:
         radial-gradient(circle, rgba(255, 210, 127, 0.55) 0 2px, transparent 3px),
-        radial-gradient(circle, rgba(125, 211, 252, 0.45) 0 1px, transparent 2px);
-    background-position: 12% 24%, 82% 68%;
-    background-size: 220px 220px, 180px 180px;
-    opacity: 0.45;
+        radial-gradient(circle, rgba(125, 211, 252, 0.45) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.42) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 179, 71, 0.38) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(125, 211, 252, 0.35) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.3) 0 1px, transparent 2px);
+    background-position: 12% 24%, 82% 68%, 30% 78%, 68% 18%, 48% 42%, 92% 34%;
+    background-size: 220px 220px, 180px 180px, 150px 150px, 130px 130px, 190px 190px, 110px 110px;
+    background-repeat: no-repeat;
+    opacity: 0.58;
     filter: blur(0.2px);
     animation: particlesDrift 14s linear infinite;
 }
@@ -725,6 +733,32 @@ footer {
 }
 
 @media (max-width: 760px) {
+    body {
+        background-attachment: scroll;
+        background-size: 180% 120%, 160% 120%, cover;
+        background-position: left top, right top, center top;
+    }
+
+    .splash {
+        overflow: hidden;
+    }
+
+    .splash::before {
+        background-size: 180% 100%, cover;
+        background-repeat: no-repeat;
+    }
+
+    .splash::after {
+        inset: 6%;
+        background-size: 170px 170px, 140px 140px, 120px 120px, 105px 105px, 145px 145px, 95px 95px;
+        background-repeat: no-repeat;
+    }
+
+    .splash-logo {
+        width: 84%;
+        height: 84%;
+    }
+
     .nav-inner {
         position: relative;
         flex-direction: row;
@@ -863,7 +897,7 @@ footer {
 
 @keyframes particlesDrift {
     to {
-        background-position: 12% -196px, 82% -112px;
+        background-position: 12% -196px, 82% -112px, 30% -72px, 68% -140px, 48% -96px, 92% -62px;
     }
 }
 
