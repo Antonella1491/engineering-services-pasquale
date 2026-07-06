@@ -1,27 +1,47 @@
-// Funzione per tornare in cima alla pagina
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
-// Mostra o nasconde il pulsante in base allo scroll
 function toggleScrollButton() {
     const btn = document.getElementById("btnTop");
-    if (window.scrollY > 200) { // appare dopo 200px di scroll
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
+
+    if (!btn) {
+        return;
     }
+
+    btn.style.display = window.scrollY > 260 ? "block" : "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btnTop");
+    const navToggle = document.querySelector(".nav-toggle");
+    const mainNav = document.getElementById("mainNav");
 
-    // Nascondi il pulsante all'inizio
-    btn.style.display = "none";
+    if (btn) {
+        btn.style.display = "none";
+        btn.addEventListener("click", scrollToTop);
+        window.addEventListener("scroll", toggleScrollButton);
+    }
 
-    // Event listener per il click
-    btn.addEventListener("click", scrollToTop);
+    if (navToggle && mainNav) {
+        navToggle.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("is-open");
 
-    // Event listener per lo scroll
-    window.addEventListener("scroll", toggleScrollButton);
+            navToggle.classList.toggle("is-open", isOpen);
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+            navToggle.setAttribute("aria-label", isOpen ? "Chiudi menu" : "Apri menu");
+        });
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mainNav.classList.remove("is-open");
+                navToggle.classList.remove("is-open");
+                navToggle.setAttribute("aria-expanded", "false");
+                navToggle.setAttribute("aria-label", "Apri menu");
+            });
+        });
+    }
 });
